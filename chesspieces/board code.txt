@@ -1,0 +1,18 @@
+for (var x = 1; x <= 64; x++) {
+  square = document.createElement("div");
+  square.setAttribute("id", x);
+  square.setAttribute("class", "square");
+
+  // Calculate the row and column to determine the square color
+  var column = (x - 1) % 8;
+  var row = Math.floor((x - 1) / 8);
+
+//applies color based on square
+  if ((row + column) % 2 === 0) {
+    square.style.backgroundColor = lightColor;
+  } else {
+    square.style.backgroundColor = darkColor;
+  }
+
+  board.appendChild(square);
+}
