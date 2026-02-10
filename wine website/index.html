@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mr De Haviland">
+  <title>Wine Time</title>
+  <link rel="stylesheet" href="styles/home.css">
+
+</head>
+<body>
+  <header>
+    <div id="header-container">
+      <nav id="menu">
+        <div><button type="button" id="menu-button" onclick="toggleMenu()">☰</button></div>
+        <div id="menu-items">
+          <ul>
+            <li><a href="html/Wine-Search.html">Wines</a></li>
+            <li><a href="html/Your-Wines.html">Your Wines</a></li>
+            <li><a href="html/New-Wine-Form.html">Add Wine</a></li>
+            <li><a href="html/About-Us.html">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="title"><h1 id="title-text" class="headings">Wine Time</h1></div>
+    </div>
+  </header>
+  <main class="main">
+  <div id="day"><h2 class="headings">Wines of the day</h2></div>
+  <section id="wines">
+    <div class="wine"><span>Wine</span><img src="https://images.vivino.com/thumbs/rORmihtxSrKG7SfuI0bD6w_pb_x300.png" alt="png image of white wine"></div>
+    <div class="wine"><span>Wine</span><img src="https://images.vivino.com/thumbs/mUcYdy79QZyMIo3tsiKq8A_pb_x300.png" alt="png image of white wine"></div>
+    <div class="wine"><span>Wine</span><img src="https://images.vivino.com/thumbs/lD32nuv9Sw6sJ7eQ8M6FtA_pb_x300.png" alt="png image of white wine"></div>
+    <div class="wine"><span>Wine</span><img src="https://images.vivino.com/thumbs/lD32nuv9Sw6sJ7eQ8M6FtA_pb_x300.png" alt="png image of white wine"></div>
+  </section>
+</main>
+<section id="wine_tasting">
+    <h2 class="headings">How to taste wine</h2>
+    <div class="basic_flex">
+      <section class="wine_tasting_section">
+        <div><h3 class="headings">Process</h3></div>
+        <h4 class="headings">Sight</h4>
+        <p>Start by observing the color and clarity of the wine. This can give hints to the age and acidity level of the wine.</p>
+        <h4 class="headings">Smell</h4>
+        <p>Next you want to smell the wine. Start by swirling the wine in the glass to help release the aromas. Place your nose directly above the wine and take a quick sniff. If the aroma is not noticeable from a distance further than a few inches than the wine is likely cheap.</p>
+        <h4 class="headings">Taste</h4>
+        <p>To properly taste the wine a few steps must be taken. Begin by taking a small sip. before you swallow it is important to swirl the wine in your mouth lightly and inhale a small amount. Since most of the taste from wine comes from the nose it is important to have airflow while you sip.</p>
+        <h4 class="headings">Grading</h4>
+        <p>Once finished write down your findings and overall thoughts of the wine. These can be recorded and saved for later on our "Add Wines" page.</p>
+      </section>
+      <section class="wine_tasting_section">
+        <div><h3 class="headings">Helpful links</h3></div>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=pJ_6QO-a5Us">Wine tasting tutorial #1 (video)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=ItHgxJWlcyw">Wine tasting tutorial #2 (video)</a></li>
+          <li><a href="https://winefolly.com/deep-dive/how-to-taste-wine-develop-palate/">Wine tasting tutorial #3</a></li>
+          <li><a href="https://www.jancisrobinson.com/learn/vocabulary/aromas">Common wine aromas</a></li>
+          <li><a href="https://winefolly.com/deep-dive/common-types-of-wine/">Types of wine</a></li>
+          <li><a href="https://www.vinovest.co/blog/wine-flavors">Flavor types</a></li>
+        </ul>
+      </section>
+    </div>
+</section>
+<script src="scripts/home.js"></script>
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById("menu-items");
+      if(mobileMenu.style.display == "block"){
+        mobileMenu.style.display = "none";
+      }
+      else{
+        mobileMenu.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
