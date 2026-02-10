@@ -1,0 +1,79 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        var avail = {{ availability | tojson }};
+
+        google.charts.load("current", {packages:["calendar"]});
+        google.charts.setOnLoadCallback(() => {
+            var defaultVenue = document.getElementById("venue_selector").value.trim();
+            drawChart(defaultVenue);
+        });
+
+        function drawChart(venue) {
+            var rows = avail[venue];
+
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn({ type: 'date', id: 'Date' });
+            dataTable.addColumn({ type: 'number', id: 'booked' });
+
+            var dateFormat = rows.map(date => {
+                var parts = date.split("-");
+                var year = parseInt(parts[0]);
+                var month = parseInt(parts[1]) - 1;
+                var day = parseInt(parts[2]);
+
+                return [new Date(year, month, day), 1];
+            });
+
+            dataTable.addRows(dateFormat);
+            
+            var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+
+            var options = {
+                title: "Events at venue",
+                width: 1200,
+                height: 2500,
+                colorAxis: { 
+                    colors: ['#FFFFFF', '#08519C'], 
+                    minValue: 0,
+                    maxValue: 1
+                }
+            };
+
+            chart.draw(dataTable, options);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="venue">Choose a venue:</label>
+        <select id="venue_selector" name="venue" width="12">
+            {% for venue in keys %}
+            <option>{{ venue }}</option>
+            {% endfor %}
+        </select>
+    </form>
+    <script>
+        const dropdown = document.getElementById('venue_selector');
+        dropdown.addEventListener('change', function () {
+            drawChart(this.value.trim());
+        });
+    </script>
+    <div id="chart_wrapper">
+        <div id="calendar_basic"></div>
+    </div>
+</body>
+<style>
+    #chart_wrapper {
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 1000px;
+        height: 500px;
+        border: 1px solid #ccc;
+    }
+</style>
+</html>
+{% endblock %}

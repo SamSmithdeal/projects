@@ -1,0 +1,81 @@
+Table user {
+  user_id integer PK
+  name text
+  phone_number text
+  email text
+  is_admin bool
+  venue_owner bool
+}
+
+Table address {
+  address_id integer PK
+  street_address text
+  address_line2 text
+  city text
+  state_province text
+  postal_code text
+  country text
+}
+
+Table venue {
+  venue_id integer PK
+  address_id integer [ref: - address.address_id, unique]
+  name text
+  capacity int
+  owner_id int
+}
+ref: venue.owner_id > user.user_id
+
+Table dates_unavailable {
+  availability_id integer PK
+  venue_id integer [ref: > venue.venue_id]
+  start_date date
+  end_date date
+}
+
+
+Table performer{
+  user_id integer PK
+  band_name text
+  type text [note: 'artist, comedian etc.']
+  crewsize integer
+}
+ref: user.user_id - performer.user_id
+
+Table event_performers{
+  performer_id integer PK
+  event_id integer PK
+}
+ref: event_performers.performer_id > performer.user_id
+ref: event_performers.event_id > event.event_id
+
+Table event{
+  event_id integer PK
+  venue_id integer
+  name text
+  description text
+  organizer integer [ref: > event_organizer.user_id]
+}
+ref: event.venue_id> venue.venue_id
+
+Table event_datetime{
+  event_id int PK [ref: - event.event_id]
+  start_date date
+  end_date date
+  start_time text
+  end_time text
+}
+
+Table ticket{
+  event_id integer PK
+  ticket_id integer PK
+  price float
+  ticket_sold bool
+}
+ref: ticket.event_id > event.event_id
+
+
+Table event_organizer {
+  user_id integer PK [ref: - user.user_id]
+  speciality text 
+}

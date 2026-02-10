@@ -1,0 +1,14 @@
+Form:(Ian)
+Register as a performer:
+Name
+crew size
+Type
+
+Actions:(Ben)
+Contact
+
+Chart: (Chris)
+clean up chart
+calendar chart
+
+Style: Index and About (Sam)

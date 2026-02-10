@@ -1,0 +1,24 @@
+user BL
+preformer SS
+organizer CB
+venue owner CB
+venue BL
+event SS
+ticket SS
+address (multi value attribute in venue) BL
+preforms at (M to N relationship between preformer and event) SS
+venue_availability (multi value attribute of venue) BL
+admin IZ
+
+
+order to add data: 
+User
+Performer
+Event_organizer 
+Address 
+Venue 
+Dates_unavailable
+Event 
+Event_performers
+Titcket 
+Event date and time

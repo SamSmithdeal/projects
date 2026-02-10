@@ -1,0 +1,102 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<style>
+  html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+  body{
+    background-image: url("/static/indexBackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1{
+    color: white;
+    text-shadow: 5px 5px 5px black;
+  }
+  .front{
+    margin-top: 100px;
+  }
+.container, .content, .appbuilder, .container-fluid, footer, .footer{
+  background: transparent;
+}
+.btn, li a{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 20px;
+  background: linear-gradient(to left, #fff 50%, #4582ec 40%) right;
+  background-size: 200%;
+  border-radius: 8%;
+  font-family: "Raleway";
+  color: black;
+  text-decoration: none;
+  transition: 0.5s ease-out;
+  font-weight: bolder;
+  background-position: right;
+}
+
+
+  a{
+    color: black;
+  }
+  li a{
+    border: 1px solid red;
+  }
+  .navbar-brand{
+    color: black;
+  }
+  .btn:hover{
+    color: #fff;
+    background-position: left;
+    border: 2px solid black;
+  }
+    li a:hover{
+    color: #fff;
+    background-position: left;
+    border: 2px solid black;
+  }
+</style>
+<div class="front">
+  <div class="container text-center">
+    <h1>Welcome to Spotlight!</h1>
+    <a href="/login/" class="btn" id="loginButton">LOGIN</a>
+  </div>
+<script>
+  const isLoggedIn = {{ 'true' if current_user.is_authenticated else 'false' }};
+</script>
+
+<script>
+  const button = document.getElementById("loginButton");
+  if (isLoggedIn) {
+    button.textContent = "Logout";
+    button.href = "/logout/";
+  } else {
+    button.textContent = "Login";
+    button.href = "/login/";
+  }
+
+
+  const b = document.querySelectorAll("a");
+  for(var x = 0;x<b.length;x++){
+    b[x].style.border = "2px solid white";
+  }
+
+  const about = document.getElementsByClassName("navbar-nav");
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = "about";
+  li.classList.add("dropdown")
+  a.classList.add("dropdown-toggle")
+  li.style.height = "100%"
+  a.innerHTML = "About Us"
+  a.style.border = "2px solid white"
+  li.appendChild(a);
+
+
+
+  about[0].appendChild(li);
+</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+DROP VIEW IF EXISTS event_time_location;
+DROP VIEW IF EXISTS performer_total_income;
+DROP VIEW IF EXISTS cheap_available_tickets;
+DROP VIEW IF EXISTS performer_unsold_tickets;
+DROP TABLE IF EXISTS event_datetime;
+DROP TABLE IF EXISTS event_performers;
+DROP TABLE IF EXISTS ticket;
+DROP TABLE IF EXISTS event_info;
+DROP TABLE IF EXISTS dates_unavailable;
+DROP TABLE IF EXISTS venue;
+DROP TABLE IF EXISTS address;
+DROP TABLE IF EXISTS performer;
+DROP TABLE IF EXISTS event_organizer;
+DROP TABLE IF EXISTS app_user;

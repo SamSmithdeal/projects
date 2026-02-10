@@ -1,0 +1,48 @@
+Entity:
+Venu
+Attributes: 
+((address)), capacity, venue id, owner, dates available
+Relationships:
+
+Entity: 
+Event
+Attributes:
+tickets sold(can be inferred by suming tickets for this event in the ticket table), preformer(s), venu, description, start time, end time, date, id
+Relationships:
+1. Every event must be at one and only one venue
+2. Each event must have one or more preformers.
+
+
+Entity: 
+User
+Attributes:
+user_id, name, email, phone number
+
+Entity: 
+Preformer
+Attributes:
+type
+Relationships:
+1. Each preformer can be perform at many events
+2. Each event can have many performers
+
+Entity: 
+Organizer
+Relationships:
+1. Each organizer must organize at least one event
+2. Each event must have one organizer
+
+Entity: 
+Owner
+Relationships:
+1. An owner must own at least one venue
+2. Each venue can only have one owner
+
+Entity: 
+Ticket (weak entity) there must be an event for the ticket to exists
+Attributes: 
+price, ticket id, event id, sold
+Relationships: 
+1. Each ticket provides access to one event
+
+
