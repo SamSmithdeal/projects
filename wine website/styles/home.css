@@ -1,0 +1,238 @@
+/* make up some class, make elements with that class have one of the specified position values */
+.position{
+    position: static;
+  }
+  *{
+    margin: 0;
+    padding: 0%;
+  }
+  
+  header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+#menu-items{
+  z-index: 100;
+}
+
+  #header-container{
+    width: 95vw;
+    height: 300px;
+    background-image: url("../images/test.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: position top -500px;;
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body{
+    background-image: url("../images/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #title{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
+   height: 80%;
+   background-color: transparent;
+   font-size: 200%;
+  }
+  .headings{
+    text-shadow: 2px 2px 2px black;
+    font-weight:20;
+    color:white;
+    font-family: Mr De Haviland;
+  }
+  nav ul li{
+    display: inline;
+    margin-right: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    z-index: 20;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
+    color: #800800;
+  }
+  
+  #wines{
+    display: grid;
+    width: 95vw;
+    gap: 2vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 5px;
+  
+  }
+  
+  .wine{
+    background-position:right;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    color: white;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  .wine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .wine > * {
+    position: relative;
+    z-index: 2;
+  }
+  .wine span{
+    text-align: center;
+  }
+  #wine_tasting{
+    width: 95vw;
+    margin: 20px auto;
+    font-size: 2rem;
+    text-align: center;
+    background-image: url("../images/small-back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .basic_flex{
+    display: flex;
+  }
+  .wine_tasting_section{
+    width: 50%;
+    text-align: left;
+  }
+  .wine_tasting_section div{
+    text-align: center;
+  }
+  .wine_tasting_section p, ul{
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 10px 20px;
+  }
+  .wine_tasting_section h4{
+    padding-left: 20px;
+  }
+  .wine:hover{
+    cursor: pointer;
+    outline: 2px solid rgba(255, 255, 255, 1);
+  }
+
+
+
+  #day{
+    width: 95vw;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: lighter;
+    font-size: 2rem;
+  }
+
+  #menu{
+    margin-top: 10px;
+    position: fixed;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #menu-button{
+    background-color: rgb(43, 42, 40);
+    border: 1px solid #800800;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin-right: 20px;
+    display:none;
+  }
+  
+  /*media queries used to make site responsive for small and large screens*/
+  @media (max-width: 820px){
+    #wines{
+        grid-template-columns: 1fr 1fr;
+        gap: 10vw;
+        width: 90vw;
+    }
+    nav ul li{
+        margin-right: 20px;
+      }
+  }
+  @media (max-width: 500px){
+    #wines{
+        grid-template-columns: 1fr;
+        width: 80vw;
+    }
+    .basic_flex{
+        flex-direction: column;
+    }
+    .wine_tasting_section{
+        width: 100%;
+    }
+    #wine_tasting{
+        width: 100%;
+    }
+
+  }
+  @media (max-width: 723px){
+    #title{
+        width:50%;
+        height: 100%;
+        margin-left: 10px;
+    }
+    #header-container{
+        height: 100px;
+        width: 100vw;
+        background-position: 100% center;
+    }
+    #day{
+        margin-top: 100px;
+    }
+    
+    #menu-items{
+        background-image: url("../images/small-back.png");
+        margin-right: 20px;
+        width: 120px;
+        display: none;
+    }
+    nav ul{
+        text-align: center;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+    #menu-button{
+        display: block;
+    }
+    #menu{
+        margin-top: 25px;
+    }
+    
+  }

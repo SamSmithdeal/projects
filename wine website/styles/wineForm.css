@@ -1,0 +1,292 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/** Nav Bar created by Sam */
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #header-container{
+    width: 95vw;
+    height: 300px;
+    background-image: url("../images/test.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: position top -500px;;
+    z-index: 100;
+  }
+  #title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    background-color: transparent;
+    font-size: 200%;
+   }
+   .headings{
+     text-shadow: 2px 2px 2px black;
+     font-weight:20;
+     color:white;
+     font-family: Mr De Haviland;
+   }
+   nav ul li{
+     display: inline;
+     margin-right: 40px;
+     font-family: Arial, Helvetica, sans-serif;
+   }
+   a{
+     text-decoration: none;
+     color: white;
+   }
+   a:hover{
+     color: #800800;
+   }
+   #menu{
+    margin-top: 10px;
+    position: fixed;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  #menu-button{
+    background-color: rgb(43, 42, 40);
+    border: 1px solid #800800;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin-right: 20px;
+    display:none;
+  }
+  @media (max-width: 820px){
+    nav ul li{
+        margin-right: 20px;
+      }
+  }
+  
+  @media (max-width: 723px){
+    #title{
+        width:50%;
+        height: 100%;
+        margin-left: 10px;
+    }
+    #header-container{
+        height: 100px;
+        width: 100vw;
+        background-position: 100% center;
+    }
+    
+    #menu-items{
+        background-image: url("../images/small-back.png");
+        margin-right: 20px;
+        width: 120px;
+        display: none;
+    }
+    nav ul{
+        text-align: center;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+    #menu-button{
+        display: block;
+    }
+    #menu{
+        margin-top: 25px;
+    }
+  }
+
+  body{
+    background-image: url("../images/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*Styles, might transfer to universal*/
+    color: white;
+    font: arial;
+  }
+
+/* H1 style */
+h1{
+  font-family: Mr De Haviland;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/* 
+* Sweetness slider 
+* Slider info from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider_pic
+*/
+.slidecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: whitesmoke;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  /* Resize background img */
+    background: url('../images/wine-emoji-tiny.png');
+  /* background: url('https://www.w3schools.com/howto/contrasticon.png'); */
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+    background: url('../images/wine-emoji-tiny.png');
+  /* background: url('https://www.w3schools.com/howto/contrasticon.png'); */
+  cursor: pointer;
+}
+
+/**
+* 5 Star Rating System
+* https://dev.to/vikas2426/5-star-rating-component-a-step-by-step-guide-37bk
+* and from (for accessibility
+* https://dev.to/vaibhavbshete/star-rating-input-using-html-css-45jj
+*/
+.star-rating{
+  float: left;
+  font-size:xx-large;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+input[name=rating] {
+  position:fixed;
+  opacity:0;
+/* I have no idea why this
+ * allows 5 star to function Smoother
+ * Uncomment if useability decreases
+  *left:-90000px; */ 
+ }
+ 
+/** For accesibilty purposes, transfer to other fields */
+input[name=rating]:focus + label {
+  outline: 2px dotted black;
+ }
+ 
+input[name=rating]:checked ~ label {
+  color: gold;
+ }
+ 
+/* Wine Selector */
+.wine-type{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ input[name=type-of-wine]{
+  opacity: 0;
+  position: fixed;
+ }
+
+ input[id=red]:checked + label{
+  color: red;
+ }
+input[id=white]:checked + label{
+  color: grey;
+}
+input[id=sparkling]:checked + label{
+  color: aqua;
+}
+input[id=rosé]:checked + label{
+  color: pink;
+}
+input[id=dessert]:checked + label{
+  color: burlywood;
+}
+input[id=port]:checked + label{
+  color:peru
+}
+ input[id=orange]:checked + label{
+  color: orange;
+ }
+
+/* Wine Details */
+.wine-details{
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.input-group{
+  width: 25%;
+}
+
+.name-field{
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
+  width: 50%;               
+  margin: 20px auto;
+}
+
+/* Text Field */
+/* Need help positioning "Notes" */
+.notes-field{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.rating-notes-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 700px){
+  .wineatr{
+    width: 100px;
+  }
+
+  .wine-details{
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 723px){
+  #page-start{
+    margin-top: 100px;
+  }
+}

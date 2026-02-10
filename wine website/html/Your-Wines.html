@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wines</title>
+    <link rel="stylesheet" href="../styles/your-wines.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mr De Haviland">
+</head>
+<body>
+        <!-- Nav Bar Code - Thanks Sam !-->
+        <header>
+            <div id="header-container">
+              <nav id="menu">
+                <div><button type="button" id="menu-button" onclick="toggleMenu()">☰</button></div>
+                <div id="menu-items">
+                  <ul>
+                    <li><a href="Wine-Search.html">Wines</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="New-Wine-Form.html">Add Wine</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div id="title"><h1 id="title-text" class="headings">Wine Time</h1></div>
+            </div>
+          </header>
+          <!-- All entries are statitic, cannot edit-->
+           <div id="main-start"><h1>Your Wines</h1><button type="button" id="download" class="edit">Download Data</button><button type="button" class="edit" id="delete">Delete Data</button></div>
+           <section id="your-wines">
+            <div id="reds" class="type-of-wine">
+              <span>Reds:</span>
+            </div>
+            <div id="whites" class="type-of-wine">
+              <span>Whites:</span>
+
+            </div>
+            <div id="sparkling" class="type-of-wine">
+              <span>Sparkling:</span>
+
+            </div>
+            <div id="ports" class="type-of-wine">
+              <span>Ports:</span>
+
+            </div>
+            <div id="desserts" class="type-of-wine">
+              <span contenteditable>Desserts:</span>
+
+            </div>
+           </section>
+
+           <template id="your-wine-template">
+            <table class="wine-table">
+              <thead>
+                <tr>
+                  <td>Name:</td>
+                  <td>Location</td>
+                  <td>Vintage</td>
+                  <td>Sweetness</td>
+                  <td>Alc</td>
+                  <td>Rating</td>
+                  <td>Notes</td>
+                  <td class="tb-del"><button type="button" class="del">Delete</button></td>
+                </tr>
+                <tr>
+                  <td class="info"><span class="name" contenteditable></span></td>
+                  <td class="info"><span class="location" contenteditable></span></td>
+                  <td class="info"><span class="vintage" contenteditable></span></td>
+                  <td class="info"><span class="sweetness" contenteditable></span></td>
+                  <td class="info"><span class="alc" contenteditable></span></td>
+                  <td class="info"><span class="rating" contenteditable></span></td>
+                  <td class="table-notes info" colspan="2"><span class="notes" contenteditable></span></td>
+                </tr>
+              </thead>
+            </table>
+           </template>
+          <script src="../scripts/yourWines.js"></script>
+          <script>
+            function toggleMenu() {
+              const mobileMenu = document.getElementById("menu-items");
+              if(mobileMenu.style.display == "block"){
+                mobileMenu.style.display = "none";
+              }
+              else{
+                mobileMenu.style.display = "block";
+              }
+            }
+          </script>
+
+</body>
+</html>

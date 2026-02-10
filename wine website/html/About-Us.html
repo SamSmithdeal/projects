@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mr De Haviland">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/About-Us.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="header-container">
+          <nav id="menu">
+            <div><button type="button" id="menu-button" onclick="toggleMenu()">☰</button></div>
+            <div id="menu-items">
+              <ul>
+                <li><a href="Wine-Search.html">Wines</a></li>
+                <li><a href="Your-Wines.html">Your Wines</a></li>
+                <li><a href="New-Wine-Form.html">Add Wine</a></li>
+                <li><a href="../index.html">Home</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div id="title"><h1 class="headings">About Us</h1></div>
+        </div>
+      </header>
+
+      <main class="main-section">
+        <section class="section">
+            <h2 class="headings">Our Story</h2>
+            <p>Welcome to our wine website! We are a group of students who came together to develop this platform for a group project involving an interactive web application. Our aim is to create an easy-to-use space where wine lovers, from beginners to masters, can explore, rate, and share your thoughts on your tried wines. Whether you’re looking to keep track of the wines you’ve enjoyed, discover new ones, or share your thoughts on specific bottles, our site offers a simple and engaging way to interact with the world of wine.</p>
+            <p>Our platform is designed to give you full control over your wine collection. You can easily browse through a wide selection of wines, add new ones to your collection, and rate them based on your personal preferences. You can also edit or update your entries and remove wines if needed. What makes our site even more user-friendly is that all your data—whether it's a new wine you’ve added or a rating you’ve given—persists through browser storage. This ensures that your contributions are saved and readily accessible whenever you return, without needing to set up accounts or external databases.</p>
+            <p>We believe that wine is about more than just tasting; it’s about new experiences, discovering new flavors, and keeping track of your journey. That’s why we built this platform to encourage discovery. Our hope is that whether you’re adding your own personal favorites, reflecting on previous ratings, or just exploring new wines, this website will become your go-to resource for everything wine-related. We’ve poured a lot of time and passion into this project, and we’re excited to share it with you. Cheers to great wine and even greater conversations!</p>
+        </section>
+        <section class="section">
+            <h2 class="headings">Author(s)</h2>
+              <div id="people">
+                <div class="person">
+                  <div class="circle person1img"></div>
+                  <h3>Joey</h3>
+                </div>
+                <div class="person">
+                  <div class="circle person2img"></div>
+                  <h3>Jack</h3>
+                </div>
+                <div class="person">
+                  <div class="circle person3img"></div>
+                  <h3>Sam</h3>
+                </div>
+              </div>
+        </section>
+      </main>
+    <script>
+        function toggleMenu() {
+          const mobileMenu = document.getElementById("menu-items");
+          if(mobileMenu.style.display == "block"){
+            mobileMenu.style.display = "none";
+          }
+          else{
+            mobileMenu.style.display = "block";
+          }
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine-Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mr De Haviland">
+    <link rel="stylesheet" href="../styles/universal-style.css">
+    <link rel="stylesheet" href="../styles/wine-search.css">
+</head>
+<body>
+    <!--use flexbox layout for the results of the wine search-->
+    <header id="wine-info-header">
+        <div id="header-container">
+          <nav id="menu">
+            <!--might need to remove the type from this button if it causes problems-->
+            <div><button type="button" id="menu-button" onclick="toggleMenu()">☰</button></div>
+            <div id="menu-items">
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="Your-Wines.html">Your Wines</a></li>
+                <li><a href="New-Wine-Form.html">Add Wine</a></li>
+                <li><a href="About-Us.html">About Us</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div id="title"><h1 id="title-text" class="headings">Wine Time</h1></div>
+        </div>
+    </header>
+
+    <div id="search-components">
+      <input id="name-input" name="name" type="search" placeholder="Enter a wine name here">
+      <select name="" id="type">
+        <option value="reds">red</option>
+        <option value="whites">white</option>
+        <option value="sparkling">sparkling</option>
+        <option value="dessert">dessert</option>
+        <option value="rose">rose</option>
+        <option value="port">port</option>
+      </select>
+    </div>
+    <div id="results">
+    </div>
+    <template id="wine-template">
+      <div class="wine">
+        <div class="wine-img">
+          <img src="#" alt="image of wine" class="img">
+        </div>
+        <div class="wine-info">
+          <p class="wineName"></p>
+          <p class="winery"></p>
+          <p class="location"></p>
+          <p class="rating"></p>
+        </div>
+
+      </div>
+    </template>
+    <script>
+      function toggleMenu() {
+        const mobileMenu = document.getElementById("menu-items");
+        if(mobileMenu.style.display == "block"){
+          mobileMenu.style.display = "none";
+        }
+        else{
+          mobileMenu.style.display = "block";
+        }
+      }
+    </script>
+    <script src="../scripts/wineSearch.js"></script>
+</body>
+</html>
